@@ -10,3 +10,9 @@ $GLOBALS['goodwillrun']['grid'] = array(
     'use_parallax' => false,
     'use_background_skew' => false
 );
+
+
+if( TL_MODE == "FE" ) {
+    $GLOBALS['TL_CSS'][] = 'bundles/goodwillrugridbundle/css/default.css|static';
+    $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/goodwillrugridbundle/js/default.js';
+}
