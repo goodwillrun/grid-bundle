@@ -1,0 +1,35 @@
+<?php
+if ($this->grid_mobile) {
+    $this->class .= " " . $this->grid_mobile;
+} else {
+    $this->class .= " col-12";
+}
+if ($this->grid) {
+    $this->class .= " " . $this->grid;
+} else {
+    $this->class .= " col-lg-12";
+}
+
+if ($this->margin) {
+    $margins = \Contao\StringUtil::deserialize($this->margin);
+    $this->style .= "padding-left: " . $margins["left"] . $margins["unit"] . ";";
+    $this->style .= "padding-top: " . $margins["top"] . $margins["unit"] . ";";
+    $this->style .= "padding-right: " . $margins["right"] . $margins["unit"] . ";";
+    $this->style .= "padding-bottom: " . $margins["bottom"] . $margins["unit"] . ";";
+}
+
+if ($this->text_color) {
+    $this->class .= " text-" . $this->text_color;
+}
+if ($this->grid_horizontal_align || $this->grid_vertical_align) {
+    $this->class .= " d-flex";
+    if ($this->grid_vertical_align)
+        $this->class .= " align-items-" . $this->grid_vertical_align;
+    if ($this->grid_horizontal_align)
+        $this->class .= " justify-content-" . $this->grid_horizontal_align;
+}
+?>
+
+<<?= $this->hl ?> class="<?= $this->class ?>"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<?= $this->headline ?>
+</<?= $this->hl ?>>

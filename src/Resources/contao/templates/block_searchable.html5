@@ -1,0 +1,61 @@
+<?php
+if ($this->grid_mobile) {
+    $this->class .= " " . $this->grid_mobile;
+} else {
+    $this->class .= " col-12";
+}
+if ($this->grid) {
+    $this->class .= " " . $this->grid;
+} else {
+    $this->class .= " col-lg-12";
+}
+
+if ($this->margin) {
+    $margins = \Contao\StringUtil::deserialize($this->margin);
+    if ($margins["left"])
+        $this->style .= "margin-left: " . $margins["left"] . $margins["unit"] . ";";
+    if ($margins["top"])
+        $this->style .= "margin-top: " . $margins["top"] . $margins["unit"] . ";";
+    if ($margins["right"])
+        $this->style .= "margin-right: " . $margins["right"] . $margins["unit"] . ";";
+    if ($margins["bottom"])
+        $this->style .= "margin-bottom: " . $margins["bottom"] . $margins["unit"] . ";";
+}
+
+if ($this->padding) {
+    $paddings = \Contao\StringUtil::deserialize($this->padding);
+    if ($paddings["left"])
+        $this->style .= "padding-left: " . $paddings["left"] . $paddings["unit"] . ";";
+    if ($paddings["top"])
+        $this->style .= "padding-top: " . $paddings["top"] . $paddings["unit"] . ";";
+    if ($paddings["right"])
+        $this->style .= "padding-right: " . $paddings["right"] . $paddings["unit"] . ";";
+    if ($paddings["bottom"])
+        $this->style .= "padding-bottom: " . $paddings["bottom"] . $paddings["unit"] . ";";
+}
+
+if ($this->text_color) {
+    $this->class .= " text-" . $this->text_color;
+}
+
+if ($this->grid_horizontal_align || $this->grid_vertical_align) {
+    $this->class .= " d-flex";
+    if ($this->grid_vertical_align)
+        $this->class .= " align-items-" . $this->grid_vertical_align;
+    if ($this->grid_horizontal_align)
+        $this->class .= " justify-content-" . $this->grid_horizontal_align;
+}
+?>
+
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+
+    <?php $this->block('headline'); ?>
+    <?php if ($this->headline): ?>
+    <<?= $this->hl ?> class="<?= $this->headline_align ?>"><?= $this->headline ?></<?= $this->hl ?>>
+<?php endif; ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('content'); ?>
+<?php $this->endblock(); ?>
+
+</div>
