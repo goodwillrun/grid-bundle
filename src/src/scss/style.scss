@@ -1,0 +1,187 @@
+@import "./font";
+@import "./variables";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./components/button";
+@import "./components/navigation";
+
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.teaser-link {
+  display: block;
+}
+
+.mini-teaser {
+  color: white;
+  background-color: black;
+
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: $grid-gutter-width;
+
+  box-shadow: $box-shadow;
+
+
+  .mini-teaser_content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: rgba(0, 0, 0, .6);
+  }
+}
+
+
+.icon-teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+
+  margin-bottom: $grid-gutter-width;
+
+  background-color: white;
+
+  box-shadow: $box-shadow;
+
+  .icon-teaser_inner {
+
+    .icon-teaser_content {
+      width: 100%;
+      margin-top: 33.333%;
+      height: 33.333%;
+      overflow-y: visible;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .img {
+      }
+
+    }
+
+    .icon-teaser_action {
+      width: 100%;
+      height: 33.333%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    opacity: 0;
+    transition: $transition-fade;
+
+  }
+
+  &:hover {
+    .btn {
+      opacity: 1;
+    }
+  }
+
+}
+
+.card-teaser {
+
+  .card-teaser_action {
+    padding-bottom: 1em;
+    width: 100%;
+
+  }
+
+}
+
+.image_container {
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.mod_article {
+  overflow-y: hidden;
+}
+
+.background-image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 118%;
+  z-index: -1;
+  overflow: hidden;
+
+  &.skew {
+    transform: skewY(-10deg);
+
+    img {
+      transform: skewY(10deg);
+      margin-top: -9%;
+      height: 118%;
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+
+.glider {
+  .glider-slide > * {
+    height: 100%;
+  }
+}
+
+
+.mod_breadcrumb {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      &.first {
+        display: none;
+      }
+
+      &:not(.last) {
+        &:after {
+          content: '>';
+          margin: 0 1em;
+        }
+      }
+
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

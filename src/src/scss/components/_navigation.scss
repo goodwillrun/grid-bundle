@@ -1,0 +1,245 @@
+$navi-height: 4rem;
+$navi-height-md: 4rem;
+
+header.navi {
+  height: $navi-height;
+  @include media-breakpoint-up(md) {
+    height: $navi-height-md;
+  }
+  transition: transform 0.25s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  will-change: transform, position, transition;
+  width: 100%;
+  visibility: visible;
+  background-color: $white;
+  // Usually hidden and fixed
+  position: fixed;
+  top: 0;
+  transform: translateY(-100%);
+  z-index: 10000;
+
+  &.static {
+    // Will be at top of page
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: none;
+    transform: translateY(0%);
+  }
+
+  &.disable {
+    position: fixed;
+    transition: none;
+    visibility: hidden;
+  }
+
+  &.fixed {
+    // Will be when scrolling down
+    transform: translateY(0%);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: block;
+      width: auto;
+      height: 80%;
+    }
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+
+        a {
+          color: $body-color;
+          text-decoration: none;
+
+          &:hover, &.active {
+            color: $primary;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      div.level_1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-top: $navi-height;
+
+        background-color: $body-bg;
+
+        z-index: -1;
+
+        display: none;
+
+        &.open {
+          display: block;
+        }
+
+        a {
+          display: block;
+          width: 100%;
+          padding: 0.2rem $grid-gutter-width / 2;
+        }
+
+        ul.level_1 {
+          @include make-container-max-widths();
+          margin: 0 auto;
+
+          a {
+            font-family: $headings-font-family;
+            @include font-size("1.2rem");
+          }
+        }
+
+        ul.level_2 {
+          padding-left: $grid-gutter-width;
+
+          a {
+            font-family: $font-family-sans-serif;
+            @include font-size("1.1rem");
+          }
+
+          ul {
+            a {
+              font-family: $font-family-sans-serif;
+              @include font-size("0.9rem");
+              padding-left: $grid-gutter-width;
+            }
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      div.level_1 {
+        position: relative;
+        height: 100%;
+
+        ul.level_1 {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          height: 100%;
+
+          & > li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.6rem 0 0.6rem;
+            margin: 0;
+            height: 100%;
+
+            &:hover {
+              &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $primary;
+              }
+
+              div.level_2 {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      div.level_2 {
+        // Full screen navigation
+        display: none;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        padding-top: $navi-height-md;
+
+        background-color: $body-bg;
+
+        margin: 0 auto;
+
+        ul.level_2 {
+          @include make-container-max-widths();
+          @include make-row();
+          margin: 0 auto;
+          padding: 2rem 0 4rem;
+
+          & > li {
+            @include make-col(4);
+
+            & > a {
+              font-family: $headings-font-family;
+              @include font-size("1.1rem")
+            }
+
+            // Deepers
+            ul {
+              li {
+
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.burger {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  span {
+    font-family: $headings-font-family;
+    @include font-size("1.2rem");
+  }
+}
+
+#container {
+  margin-top: $navi-height;
+  @include media-breakpoint-up(lg) {
+    //margin-top: 9.2rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  color: $white;
+  background-color: $black;
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+
+}

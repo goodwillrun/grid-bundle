@@ -1,0 +1,24 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "./src/GOODWILLRUN/worktec-theme/src/Resources/public",
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "esModuleInterop": true
+  },
+  "include": [
+    "./src/GOODWILLRUN/worktec-theme/src/src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
+  ]
+}

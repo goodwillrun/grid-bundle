@@ -1,0 +1,49 @@
+/*
+Bootstrap variables
+==================================================
+Contains all overrides of bootstrap default variables.
+
+https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults
+*/
+
+
+$enable-gradients: false;
+
+$enable-responsive-font-sizes: true;
+$modal-backdrop-bg: rgba(#000, 0.5);
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+/** TYPOGRAPHY **/
+$font-size-root: null !default;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+
+$font-size-sm: $font-size-base * .6;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+$headings-font-family: 'Zing Rust', sans-serif;
+
+/** COLORS **/
+$primary:       #00A5A3 !default;
+$secondary:     #131313 !default;
+$dark:          #131313 !default;
+
+/** BUTTONS **/
+$btn-border-radius: 0;
+$btn-border-width: 3px;
+$btn-line-height: 16px;
+
+/** BADGES **/
+$badge-font-size: .75em;
+$badge-padding-y: .25em;
+$badge-padding-x: .5em;
+$badge-border-radius: 0;
