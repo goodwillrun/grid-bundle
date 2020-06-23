@@ -1,7 +1,9 @@
 <?php
 /* TEXT */
+$GLOBALS['TL_LANG']['tl_content']['theme_legend'] = 'Theme Einstellungen';
 $GLOBALS['TL_LANG']['tl_content']['text_color']['0'] = 'Text Farbe';
 $GLOBALS['TL_LANG']['tl_content']['text_orientation']['0'] = 'Text Ausrichtung';
+$GLOBALS['TL_LANG']['tl_content']['addBackgroundImage']['0'] = 'Hintergrundbild hinzufügen';
 
 /* ICON */
 $GLOBALS['TL_LANG']['tl_content']['icon_legend'] = 'Icon Einstellungen';
@@ -25,12 +27,19 @@ $GLOBALS['TL_LANG']['tl_content']['grid_legend'] = 'Grid Einstellungen';
 $GLOBALS['TL_LANG']['tl_content']['visibility'] = ['Sichtbarkeit', 'Schränkt die Sichtbarkeit größenspezifisch ein'];
 $GLOBALS['TL_LANG']['tl_content']['is_card'] = ['Ist eine Karte', 'Legt fest, ob das Element als Karte dargestellt wird (vgl. https://material.io/components/cards/)'];
 
-$GLOBALS['TL_LANG']['tl_content']['grid']['0'] = 'Breite (desktop only)';
+$GLOBALS['TL_LANG']['tl_content']['grid']['0'] = 'Breite (große Bildschirme)';
 $GLOBALS['TL_LANG']['tl_content']['grid']['1'] = 'Keine Auswahl: automatisch';
+
+$GLOBALS['TL_LANG']['tl_content']['grid_visible']['0'] = 'Sichtbar (große Bildschirme)';
+$GLOBALS['TL_LANG']['tl_content']['grid_mobile_visible']['0'] = 'Sichtbar';
 
 $GLOBALS['TL_LANG']['tl_content']['grid_margin_left']['0'] = 'Abstand Links';
 $GLOBALS['TL_LANG']['tl_content']['grid_margin_right']['0'] = 'Abstand Rechts';
 $GLOBALS['TL_LANG']['tl_content']['grid_mobile']['0'] = 'Breite';
+
+$GLOBALS['TL_LANG']['tl_content']['grid_horizontal_align']['0'] = 'Horizontale Ausrichtung';
+$GLOBALS['TL_LANG']['tl_content']['grid_vertical_align']['0'] = 'Vertikale Ausrichtung';
+
 
 /* MARGINS */
 $GLOBALS['TL_LANG']['tl_content']['margin_legend'] = 'Abstände';
