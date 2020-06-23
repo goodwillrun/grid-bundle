@@ -1,6 +1,6 @@
 <?php
 
-namespace GOODWILLRUN\Grid\Classes;
+namespace GOODWILLRUN\GridBundle\Classes;
 
 use Contao\StringUtil;
 use Contao\System;

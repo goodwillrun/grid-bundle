@@ -1,6 +1,6 @@
 <?php
 
-namespace GOODWILLRUN\Grid\DependencyInjection;
+namespace GOODWILLRUN\GridBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

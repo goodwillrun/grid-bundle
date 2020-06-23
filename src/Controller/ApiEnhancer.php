@@ -1,6 +1,6 @@
 <?php
 
-namespace GOODWILLRUN\Grid\Controller;
+namespace GOODWILLRUN\GridBundle\Controller;
 
 
 use DieSchittigs\ContaoContentApiBundle\ContaoJson;
